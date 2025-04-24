@@ -9,12 +9,6 @@ function tsp_ls(distance_matrix) {
     for (let i = 0; i < n; i++) {
         route[i] = i;
     }
-    for (let i = n - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let swap = route[i];
-        route[i] = route[j];
-        route[j] = swap;
-    }
 
     let totalDistance = 0;
     for (let i = 0; i < n - 1; i++) {
