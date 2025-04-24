@@ -1,5 +1,9 @@
 # Traveling Salesperson Problem -- Local Search
 
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
+I had some help from aiden because I didn't know exactly what tsp local search was but he gave me the run down on what this explenation below means. I also had help from chatGPT to help rearrange the route list.
+
 This exercise is about the Traveling Salesperson Problem I mentioned in the
 lecture on NP-hard problems -- given a set of cities, determine the length of
 the shortest tour that visits all of them. We can get from any city to any other
@@ -48,5 +52,13 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 ## Runtime Analysis
 
 What is the worst-case asymptotic time complexity of your implementation? What
-is the worst-case asymptotic memory complexity? Add your answer, including your
-reasoning, to this markdown file.
+is the worst-case asymptotic memory complexity? 
+
+We have a time complexity and memory complexity of $\Theta(n)$.
+Building the initial route list is a time complexity of $\Theta(n)$. Then we run an 
+exhaustive loop to check if the distance is getting shorter. Inside this loop, 
+we determine whether a swap would be more efficient and if thats the case then we swap.
+This swap costs us another time of $\Theta(n)$. We run this a minimum of 10 times but
+constants dont count. This is where we get the time complexity of $\Theta(n)$.
+
+As for the memory complexity we just have a route list that tracks the current route we take.
