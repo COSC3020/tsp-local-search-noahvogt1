@@ -54,12 +54,13 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? 
 
-We have a time complexity and memory complexity of $\Theta(n^3)$.
+We have a time complexity and memory complexity of $\Theta(n*n!)$.
 Building the initial route list is a time complexity of $\Theta(n)$ but this won't
 matter because it is outside of the follwoing loop. Then we run an 
 exhaustive loop to check if the distance is getting shorter. This loop at a worst
-case has $n^2$ number of possible ways to swap because n choose 2 is $n^2$. Inside this loop, 
+case has n! number of times that it could improve, this is because there are n! different
+permutations of the route. Inside this loop, 
 we determine whether a swap would be more efficient and if thats the case then we swap.
-This swap costs us another time of $\Theta(n)$. This is where we get the time complexity of $\Theta(n^3)$.
+This swap costs us another time of $\Theta(n)$. This is where we get the time complexity of $\Theta(n*n!)$.
 
 As for the memory complexity we just have a route list that tracks the current route we take.
